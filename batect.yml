@@ -34,6 +34,12 @@ tasks:
       container: build-env
       command: bundle exec rake spec
 
+  lint:
+    description: Run RuboCop to lint all Ruby files.
+    run:
+      container: build-env
+      command: bundle exec rake rubocop
+
   guard:
     description: Start guard, which is configured to run the unit tests and RuboCop.
     run:
