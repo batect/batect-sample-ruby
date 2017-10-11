@@ -1,0 +1,47 @@
+project_name: international-transfers-service
+
+containers:
+  build-env:
+    image: ruby:2.4.2
+    volumes:
+      - .:/code:cached
+    working_directory: /code
+    environment:
+      - BUNDLE_PATH=/code/.bundle-cache
+
+tasks:
+  install:
+    description: Install dependencies.
+    run:
+      container: build-env
+      command: bundle install
+
+  update:
+    description: Update dependencies to the latest available verstion.
+    run:
+      container: build-env
+      command: bundle update
+
+  outdated:
+    description: List outdated dependencies.
+    run:
+      container: build-env
+      command: bundle outdated
+
+  unitTest:
+    description: Run the unit tests.
+    run:
+      container: build-env
+      command: bundle exec rake spec
+
+  continuousUnitTest:
+    description: Run the unit tests and re-run them on any changes.
+    run:
+      container: build-env
+      command: bundle exec guard
+
+  shell:
+    description: Start a shell in the development environment.
+    run:
+      container: build-env
+      command: bash
