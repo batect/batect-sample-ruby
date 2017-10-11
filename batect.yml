@@ -34,8 +34,8 @@ tasks:
       container: build-env
       command: bundle exec rake spec
 
-  continuousUnitTest:
-    description: Run the unit tests and re-run them on any changes.
+  guard:
+    description: Start guard, which is configured to run the unit tests and RuboCop.
     run:
       container: build-env
       command: bundle exec guard
