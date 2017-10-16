@@ -9,6 +9,24 @@ containers:
     environment:
       - BUNDLE_PATH=/code/.bundle-cache
 
+  database:
+    build_directory: dev-infrastructure/database
+    environment:
+      - POSTGRES_USER=international-transfers-service
+      - POSTGRES_PASSWORD=TheSuperSecretPassword
+      - POSTGRES_DB=international-transfers-service
+
+  exchange-rate-service:
+    build_directory: dev-infrastructure/exchange-rate-service-fake
+
+  international-transfers-service:
+    build_directory: dev-infrastructure/international-transfers-service
+    ports:
+      - 4567:4567
+    dependencies:
+      - database
+      - exchange-rate-service
+
 tasks:
   install:
     description: Install dependencies.
@@ -32,7 +50,22 @@ tasks:
     description: Run the unit tests.
     run:
       container: build-env
-      command: bundle exec rake spec
+      command: bundle exec rake spec:unit
+
+  integrationTest:
+    description: Run the integration tests.
+    run:
+      container: build-env
+      command: bundle exec rake spec:integration
+    start:
+      - database
+      - exchange-rate-service
+
+  journeyTest:
+    description: Run the journey tests.
+    run:
+      container: build-env
+      command: bundle exec rake spec:journey
 
   lint:
     description: Run RuboCop to lint all Ruby files.
@@ -51,3 +84,16 @@ tasks:
     run:
       container: build-env
       command: bash
+
+  build:
+    description: Build the application.
+    run:
+      container: build-env
+      command: bundle exec rake prepareImage
+
+  app:
+    description: Start the application.
+    run:
+      container: international-transfers-service
+    prerequisites:
+      - build

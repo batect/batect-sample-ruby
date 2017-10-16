@@ -24,22 +24,19 @@
 #  * zeus: 'zeus rspec' (requires the server to be started separately)
 #  * 'just' rspec: 'rspec'
 
-guard :rspec, cmd: 'bundle exec rspec', all_on_start: true do
-  require 'guard/rspec/dsl'
-  dsl = Guard::RSpec::Dsl.new(self)
-
-  # RSpec files
-  rspec = dsl.rspec
-  watch(rspec.spec_helper) { rspec.spec_dir }
-  watch(rspec.spec_support) { rspec.spec_dir }
-  watch(rspec.spec_files)
-
-  # Ruby files
-  ruby = dsl.ruby
-  dsl.watch_spec_files_for(ruby.lib_files)
+guard :rspec,
+      cmd: 'bundle exec rspec --pattern spec/unit/**/*_spec.rb',
+      all_on_start: true do
+  spec_dir = 'spec/unit'
+  watch('spec/spec_helper.rb') { spec_dir }
+  watch(%r{spec/support/.*}) { spec_dir }
+  watch(%r{spec/unit/.*}) { spec_dir }
+  watch(%r{lib/.*}) { spec_dir }
 end
 
 guard :rubocop do
+  ignore(%r{^.bundle-cache/})
+  ignore(%r{^dev-infrastructure/})
   watch(/.+\.rb$/)
   watch('Gemfile')
   watch('Guardfile')

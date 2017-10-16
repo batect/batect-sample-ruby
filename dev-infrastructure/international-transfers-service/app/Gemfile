@@ -2,7 +2,6 @@
 
 source 'https://rubygems.org'
 
-gem 'pg'
 gem 'sinatra'
 gem 'thin'
 
@@ -11,5 +10,4 @@ group :development do
   gem 'guard-rubocop'
   gem 'rake'
   gem 'rspec'
-  gem 'webmock'
 end

@@ -1,0 +1,18 @@
+AllCops:
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  Exclude:
+    - dev-infrastructure/**/*
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 12
+
+Metrics/AbcSize:
+  Enabled: true
+  Max: 20
