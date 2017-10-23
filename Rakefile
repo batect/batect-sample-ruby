@@ -6,7 +6,7 @@ namespace :spec do
     desc "Run #{category} tests"
     RSpec::Core::RakeTask.new(category) do |t|
       t.rspec_opts = ['-I', 'lib', '-I', 'spec']
-      t.pattern = FileList["spec/#{category}/**/*_spec.rb"]
+      t.pattern = "spec/#{category}/**/*_spec.rb"
     end
   end
 end
