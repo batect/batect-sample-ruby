@@ -53,6 +53,8 @@ GEM
     rack (2.0.3)
     rack-protection (2.0.0)
       rack
+    rack-test (0.7.0)
+      rack (>= 1.0, < 3)
     rainbow (2.2.2)
       rake
     rake (12.1.0)
@@ -68,6 +70,7 @@ GEM
     rspec-expectations (3.6.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.6.0)
+    rspec-json_expectations (2.1.0)
     rspec-mocks (3.6.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.6.0)
@@ -107,8 +110,10 @@ DEPENDENCIES
   guard-rspec
   guard-rubocop
   pg
+  rack-test
   rake
   rspec
+  rspec-json_expectations
   sinatra
   thin
   webmock

@@ -20,4 +20,15 @@ class Transfer
       self.exchange_rate == other.exchange_rate
   end
   # rubocop:enable Style/RedundantSelf
+
+  def to_json(*)
+    {
+      id: @id,
+      fromCurrency: @from_currency,
+      toCurrency: @to_currency,
+      transferDate: @transfer_date,
+      originalAmount: @original_amount,
+      exchangeRate: @exchange_rate
+    }.to_json
+  end
 end

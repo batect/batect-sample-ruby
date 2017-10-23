@@ -23,5 +23,7 @@ task :prepareImage do
   mkdir_p dest_dir
   cp 'Gemfile', dest_dir
   cp 'Gemfile.lock', dest_dir
+  cp 'config.ru', dest_dir
+  cp_r 'bin', "#{dest_dir}/bin"
   cp_r 'lib', "#{dest_dir}/lib"
 end

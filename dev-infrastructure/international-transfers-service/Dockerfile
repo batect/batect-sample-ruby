@@ -12,10 +12,12 @@ RUN bundle install --deployment --without development
 
 # Why do this separately? This way, we can take advantage of Docker's caching to only re-run
 # 'bundle install' when our list of dependencies have actually changed.
+COPY app/config.ru /app
+COPY app/bin /app/bin
 COPY app/lib /app/lib
 
 ENV APP_ENV=production
 
-CMD ["bundle", "exec", "ruby", "/app/lib/international_transfers_service.rb"]
+CMD ["/app/bin/international-transfers-service"]
 
 EXPOSE 4567

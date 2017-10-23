@@ -9,7 +9,9 @@ gem 'thin'
 group :development do
   gem 'guard-rspec'
   gem 'guard-rubocop'
+  gem 'rack-test'
   gem 'rake'
   gem 'rspec'
+  gem 'rspec-json_expectations'
   gem 'webmock'
 end
