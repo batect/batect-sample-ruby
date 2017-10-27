@@ -1,8 +1,6 @@
 require 'date'
 
 RSpec.describe ExchangeRateService do
-  subject { ExchangeRateService.new 'http://exchange-rate-service:6000' }
-
   describe '#get_exchange_rate' do
     it 'returns the requested exchange rate' do
       date = Date.new(2017, 2, 13)

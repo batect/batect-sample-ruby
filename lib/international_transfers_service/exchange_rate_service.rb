@@ -2,7 +2,7 @@ require 'net/http'
 require 'json'
 
 class ExchangeRateService
-  def initialize(base_url)
+  def initialize(base_url = 'http://exchange-rate-service:6000')
     @base_url = base_url
   end
 
