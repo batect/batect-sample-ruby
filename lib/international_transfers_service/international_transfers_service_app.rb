@@ -8,6 +8,14 @@ class InternationalTransfersServiceApp < Sinatra::Base
     @exchange_rate_service = exchange_rate_service
   end
 
+  get '/' do
+    'Welcome to the international transfers service!'
+  end
+
+  get '/ping' do
+    'pong'
+  end
+
   get '/transfers' do
     body = {
       transfers: @transfers_store.load_all_transfers
@@ -28,16 +36,16 @@ class InternationalTransfersServiceApp < Sinatra::Base
     transfer = Transfer.new(id, from_currency, to_currency, date, body['originalAmount'], exchange_rate)
     @transfers_store.save_transfer transfer
 
-    return_json transfer
+    return_json transfer, 201
   end
 
   private
 
-  def return_json(body)
+  def return_json(body, status = 200)
     headers = {
       'Content-Type' => 'application/json;charset=utf-8'
     }
 
-    [200, headers, JSON.dump(body)]
+    [status, headers, JSON.dump(body)]
   end
 end

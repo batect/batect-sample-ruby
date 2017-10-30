@@ -7,7 +7,7 @@ PORT=${PORT:-4567}
 
 RESPONSE=$(curl "http://$HOST:$PORT/ping" --fail --show-error --silent || exit 1)
 
-if [ "$RESPONSE" == "pong" ]; then
+if [ "$RESPONSE" = "pong" ]; then
     exit 0
 else
     echo "Unexpected response from service: $RESPONSE"

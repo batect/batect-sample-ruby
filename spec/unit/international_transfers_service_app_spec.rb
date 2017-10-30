@@ -8,6 +8,34 @@ RSpec.describe InternationalTransfersServiceApp do
   let(:exchange_rate_service) { instance_double('ExchangeRateService') }
   let(:app) { InternationalTransfersServiceApp.new(transfers_store, exchange_rate_service) }
 
+  describe '/' do
+    describe 'GET' do
+      before(:each) do
+        get '/'
+      end
+
+      it 'returns a HTTP 200 response' do
+        expect(last_response.status).to eq(200)
+      end
+    end
+  end
+
+  describe '/ping' do
+    describe 'GET' do
+      before(:each) do
+        get '/ping'
+      end
+
+      it 'returns a HTTP 200 response' do
+        expect(last_response.status).to eq(200)
+      end
+
+      it 'returns an appropriate response body' do
+        expect(last_response.body).to eq('pong')
+      end
+    end
+  end
+
   describe '/transfers' do
     describe 'GET' do
       sample_transfer = Transfer.new('abc123', 'AUD', 'HUF', Date.new(2017, 10, 23), 100.50, 1.23)
@@ -74,8 +102,8 @@ RSpec.describe InternationalTransfersServiceApp do
         post('/transfers', json, 'CONTENT_TYPE' => 'application/json')
       end
 
-      it 'returns a HTTP 200 response' do
-        expect(last_response.status).to eq(200)
+      it 'returns a HTTP 201 response' do
+        expect(last_response.status).to eq(201)
       end
 
       it 'returns an appropriate Content-Type header' do

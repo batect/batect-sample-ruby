@@ -66,6 +66,10 @@ tasks:
     run:
       container: build-env
       command: bundle exec rake spec:journey
+    start:
+      - international-transfers-service
+    prerequisites:
+      - build
 
   lint:
     description: Run RuboCop to lint all Ruby files.
