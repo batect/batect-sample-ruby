@@ -8,6 +8,8 @@ before_install:
   - sudo apt-get -y install docker-ce
   - docker --version
 
+install: ./batect run install
+
 jobs:
   include:
     - stage: lint
