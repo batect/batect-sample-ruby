@@ -8,21 +8,21 @@ before_install:
   - sudo apt-get -y install docker-ce
   - docker --version
 
-install: ./batect run install
+install: ./batect install
 
 jobs:
   include:
     - stage: lint
-      script: ./batect run lint
+      script: ./batect lint
 
     - stage: unit test
-      script: ./batect run unitTest
+      script: ./batect unitTest
 
     - stage: integration test
-      script: ./batect run integrationTest
+      script: ./batect integrationTest
 
     - stage: journey test
-      script: ./batect run journeyTest
+      script: ./batect journeyTest
 
 cache:
   directories:
