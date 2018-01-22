@@ -8,6 +8,9 @@ containers:
     working_directory: /code
     environment:
       - BUNDLE_PATH=/code/.bundle-cache
+    run_as_current_user:
+      enabled: true
+      home_directory: /tmp
 
   database:
     build_directory: dev-infrastructure/database
