@@ -2,9 +2,11 @@ project_name: international-transfers-service
 
 containers:
   build-env:
-    image: ruby:2.4.2
+    image: ruby:2.4.3
     volumes:
-      - .:/code:cached
+      - local: .
+        container: /code
+        options: cached
     working_directory: /code
     environment:
       - BUNDLE_PATH=/code/.bundle-cache
@@ -25,7 +27,8 @@ containers:
   international-transfers-service:
     build_directory: dev-infrastructure/international-transfers-service
     ports:
-      - 4567:4567
+      - local: 4567
+        container: 4567
     dependencies:
       - database
       - exchange-rate-service
