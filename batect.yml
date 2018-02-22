@@ -57,22 +57,22 @@ tasks:
 
   integrationTest:
     description: Run the integration tests.
-    run:
-      container: build-env
-      command: bundle exec rake spec:integration
     start:
       - database
       - exchange-rate-service
+    run:
+      container: build-env
+      command: bundle exec rake spec:integration
 
   journeyTest:
     description: Run the journey tests.
+    prerequisites:
+      - build
+    start:
+      - international-transfers-service
     run:
       container: build-env
       command: bundle exec rake spec:journey
-    start:
-      - international-transfers-service
-    prerequisites:
-      - build
 
   lint:
     description: Run RuboCop to lint all Ruby files.
@@ -100,7 +100,7 @@ tasks:
 
   app:
     description: Start the application.
-    run:
-      container: international-transfers-service
     prerequisites:
       - build
+    run:
+      container: international-transfers-service
