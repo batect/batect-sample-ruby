@@ -10,6 +10,7 @@ class Transfer
     @original_amount = original_amount
     @exchange_rate = exchange_rate
   end
+  # rubocop:enable Metrics/ParameterLists
 
   # rubocop:disable Style/RedundantSelf
   def ==(other)
