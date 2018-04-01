@@ -26,9 +26,6 @@ containers:
 
   international-transfers-service:
     build_directory: dev-infrastructure/international-transfers-service
-    ports:
-      - local: 4567
-        container: 4567
     dependencies:
       - database
       - exchange-rate-service
@@ -107,3 +104,6 @@ tasks:
       - build
     run:
       container: international-transfers-service
+      ports:
+        - local: 4567
+          container: 4567
