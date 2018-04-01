@@ -10,19 +10,7 @@ before_install:
 
 install: ./batect install
 
-jobs:
-  include:
-    - stage: lint
-      script: ./batect lint
-
-    - stage: unit test
-      script: ./batect unitTest
-
-    - stage: integration test
-      script: ./batect integrationTest
-
-    - stage: journey test
-      script: ./batect journeyTest
+script: ./travis/build.sh
 
 cache:
   directories:
