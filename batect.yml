@@ -12,7 +12,7 @@ containers:
       - BUNDLE_PATH=/code/.bundle-cache
     run_as_current_user:
       enabled: true
-      home_directory: /tmp
+      home_directory: /home/container-user
 
   database:
     build_directory: dev-infrastructure/database
