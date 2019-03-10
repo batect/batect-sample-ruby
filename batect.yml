@@ -33,30 +33,35 @@ containers:
 tasks:
   install:
     description: Install dependencies.
+    group: Setup tasks
     run:
       container: build-env
       command: bundle install
 
   update:
     description: Update dependencies to the latest available verstion.
+    group: Dependency management tasks
     run:
       container: build-env
       command: bundle update
 
   outdated:
     description: List outdated dependencies.
+    group: Dependency management tasks
     run:
       container: build-env
       command: bundle outdated
 
   unitTest:
     description: Run the unit tests.
+    group: Test tasks
     run:
       container: build-env
       command: bundle exec rake spec:unit
 
   integrationTest:
     description: Run the integration tests.
+    group: Test tasks
     dependencies:
       - database
       - exchange-rate-service
@@ -66,6 +71,7 @@ tasks:
 
   journeyTest:
     description: Run the journey tests.
+    group: Test tasks
     prerequisites:
       - build
     dependencies:
@@ -76,30 +82,35 @@ tasks:
 
   lint:
     description: Run RuboCop to lint all Ruby files.
+    group: Linting tasks
     run:
       container: build-env
       command: bundle exec rake rubocop
 
   guard:
     description: Start guard, which is configured to run the unit tests and RuboCop.
+    group: Utility tasks
     run:
       container: build-env
       command: bundle exec guard
 
   shell:
     description: Start a shell in the development environment.
+    group: Utility tasks
     run:
       container: build-env
       command: bash
 
   build:
     description: Build the application.
+    group: Build tasks
     run:
       container: build-env
       command: bundle exec rake prepareImage
 
   app:
     description: Start the application.
+    group: Test tasks
     prerequisites:
       - build
     run:
