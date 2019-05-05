@@ -2,7 +2,7 @@ AllCops:
   DisplayCopNames: true
   DisplayStyleGuide: true
   Exclude:
-    - dev-infrastructure/**/*
+    - .batect/**/*
 
 Style/Documentation:
   Enabled: false

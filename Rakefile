@@ -15,7 +15,7 @@ RuboCop::RakeTask.new
 
 desc 'Prepares application files for the Docker image build.'
 task :prepareImage do
-  relative_dest_dir = 'dev-infrastructure/international-transfers-service/app/'
+  relative_dest_dir = '.batect/international-transfers-service/app/'
   dest_dir = File.expand_path(relative_dest_dir,
                               File.dirname(__FILE__))
 

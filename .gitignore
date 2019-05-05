@@ -19,4 +19,4 @@
 # Entries specific to this project:
 
 /.bundle-cache
-/dev-infrastructure/international-transfers-service/app
+/.batect/international-transfers-service/app

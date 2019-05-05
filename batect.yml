@@ -15,17 +15,17 @@ containers:
       home_directory: /home/container-user
 
   database:
-    build_directory: dev-infrastructure/database
+    build_directory: .batect/database
     environment:
       POSTGRES_USER: international-transfers-service
       POSTGRES_PASSWORD: TheSuperSecretPassword
       POSTGRES_DB: international-transfers-service
 
   exchange-rate-service:
-    build_directory: dev-infrastructure/exchange-rate-service-fake
+    build_directory: .batect/exchange-rate-service-fake
 
   international-transfers-service:
-    build_directory: dev-infrastructure/international-transfers-service
+    build_directory: .batect/international-transfers-service
     dependencies:
       - database
       - exchange-rate-service

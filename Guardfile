@@ -36,7 +36,7 @@ end
 
 guard :rubocop do
   ignore(%r{^.bundle-cache/})
-  ignore(%r{^dev-infrastructure/})
+  ignore(%r{^.batect/})
   watch(/.+\.rb$/)
   watch('Gemfile')
   watch('Guardfile')
