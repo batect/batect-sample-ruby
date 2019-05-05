@@ -13,5 +13,6 @@ group :development do
   gem 'rake'
   gem 'rspec'
   gem 'rspec-json_expectations'
+  gem 'rubocop-performance'
   gem 'webmock'
 end
