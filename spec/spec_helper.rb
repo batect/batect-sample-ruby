@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Bundler.setup
 require 'international_transfers_service'
 
