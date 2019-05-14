@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Transfer
   attr_reader :id, :from_currency, :to_currency, :transfer_date, :original_amount, :exchange_rate
 
