@@ -3,7 +3,7 @@ dist: xenial
 services:
   - docker
 
-install: ./batect install
+install: ./batect setup
 
 script: ./travis/build.sh
 

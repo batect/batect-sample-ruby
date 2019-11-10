@@ -31,7 +31,7 @@ containers:
       - exchange-rate-service
 
 tasks:
-  install:
+  setup:
     description: Install dependencies.
     group: Setup tasks
     run:
