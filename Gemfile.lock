@@ -43,7 +43,7 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     parallel (1.19.1)
-    parser (2.7.0.0)
+    parser (2.7.0.1)
       ast (~> 2.4.0)
     pg (1.2.0)
     pry (0.12.2)
@@ -51,7 +51,7 @@ GEM
       method_source (~> 0.9.0)
     public_suffix (4.0.2)
     rack (2.0.8)
-    rack-protection (2.0.7)
+    rack-protection (2.0.8.1)
       rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -64,13 +64,13 @@ GEM
       rspec-core (~> 3.9.0)
       rspec-expectations (~> 3.9.0)
       rspec-mocks (~> 3.9.0)
-    rspec-core (3.9.0)
-      rspec-support (~> 3.9.0)
+    rspec-core (3.9.1)
+      rspec-support (~> 3.9.1)
     rspec-expectations (3.9.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-json_expectations (2.2.0)
-    rspec-mocks (3.9.0)
+    rspec-mocks (3.9.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.2)
@@ -87,10 +87,10 @@ GEM
     ruby2_keywords (0.0.1)
     safe_yaml (1.0.5)
     shellany (0.0.1)
-    sinatra (2.0.7)
+    sinatra (2.0.8.1)
       mustermann (~> 1.0)
       rack (~> 2.0)
-      rack-protection (= 2.0.7)
+      rack-protection (= 2.0.8.1)
       tilt (~> 2.0)
     thin (1.7.2)
       daemons (~> 1.0, >= 1.0.9)
@@ -121,4 +121,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   1.16.6
+   2.1.2
