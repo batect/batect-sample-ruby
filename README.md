@@ -1,8 +1,8 @@
 # batect-sample-ruby
 
-[![Build Status](https://travis-ci.org/charleskorn/batect-sample-ruby.svg?branch=master)](https://travis-ci.org/charleskorn/batect-sample-ruby)
+[![Build Status](https://travis-ci.org/batect/batect-sample-ruby.svg?branch=master)](https://travis-ci.org/batect/batect-sample-ruby)
 
-A sample service with two dependencies (a database and another service) with [batect](https://github.com/charleskorn/batect)-based
+A sample service with two dependencies (a database and another service) with [batect](https://github.com/batect/batect)-based
 build and testing environments.
 
 ## Building, testing, running etc.
@@ -43,4 +43,4 @@ A number of shortcuts have been taken, including:
 
 ## Links
 
-* [batect](https://github.com/charleskorn/batect)
+* [batect](https://github.com/batect/batect)
