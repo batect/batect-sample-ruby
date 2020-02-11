@@ -8,7 +8,9 @@ RUN mkdir -p /app
 
 COPY app/Gemfile app/Gemfile.lock /app/
 WORKDIR /app
-RUN bundle install --deployment --without development
+RUN bundle config set deployment true
+RUN bundle config set without development
+RUN bundle install
 
 ENV APP_ENV=production
 CMD ["/app/bin/international-transfers-service"]
