@@ -2,14 +2,17 @@ project_name: international-transfers-service
 
 containers:
   build-env:
-    image: ruby:2.7.0
+    build_directory: .batect/build-env
     volumes:
       - local: .
         container: /code
         options: cached
+      - type: cache
+        name: bundle-cache
+        container: /bundle-cache
     working_directory: /code
     environment:
-      BUNDLE_PATH: /code/.bundle-cache
+      BUNDLE_PATH: /bundle-cache
     run_as_current_user:
       enabled: true
       home_directory: /home/container-user

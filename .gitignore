@@ -18,5 +18,5 @@
 
 # Entries specific to this project:
 
-/.bundle-cache
+/.batect/caches
 /.batect/international-transfers-service/app
