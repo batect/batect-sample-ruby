@@ -3,10 +3,13 @@ dist: xenial
 services:
   - docker
 
+env:
+  - BATECT_CACHE_TYPE=directory
+
 install: ./batect setup
 
 script: ./travis/build.sh
 
 cache:
   directories:
-    - .bundle-cache
+    - .batect/caches
