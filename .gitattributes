@@ -1,0 +1,27 @@
+*                text=auto
+
+*.editorconfig   text       eol=lf
+*.ejs            text       eol=lf
+*.json           text       eol=lf
+*.md             text       eol=lf
+*.rspec          text       eol=lf
+*.ru             text       eol=lf
+*.sh             text       eol=lf
+*.sql            text       eol=lf
+*.txt            text       eol=lf
+*.yml            text       eol=lf
+batect           text       eol=lf
+Dockerfile       text       eol=lf
+Gemfile          text       eol=lf
+Gemfile.lock     text       eol=lf
+Rakefile         text       eol=lf
+LICENSE          text       eol=lf
+
+international-transfers-service          text       eol=lf
+
+*.bat            text       eol=crlf
+*.cmd            text       eol=crlf
+*.ps1            text       eol=crlf
+
+*.gitignore      text=auto
+*.gitattributes  text=auto
