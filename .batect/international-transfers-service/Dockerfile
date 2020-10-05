@@ -1,4 +1,4 @@
-FROM ruby:2.7.1
+FROM ruby:2.7.2
 
 RUN mkdir -p /tools
 COPY health-check.sh /tools
