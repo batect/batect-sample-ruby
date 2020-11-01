@@ -2,7 +2,7 @@ project_name: international-transfers-service
 
 containers:
   build-env:
-    image: ruby:2.7.0
+    image: ruby:2.7.2
     volumes:
       - local: .
         container: /code
