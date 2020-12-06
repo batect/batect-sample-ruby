@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'net/http'
-require 'rspec/json_expectations'
 
 RSpec.describe 'the international transfers service' do
   let(:base_url) { 'http://international-transfers-service:4567' }
@@ -43,7 +42,7 @@ RSpec.describe 'the international transfers service' do
           ]
         }
 
-        expect(response.body).to include_json(expected_body)
+        expect(response.body).to be_json_eql(expected_body.to_json)
       end
     end
   end

@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'rack/test'
-require 'rspec/json_expectations'
 
 RSpec.describe InternationalTransfersServiceApp do
   include Rack::Test::Methods
@@ -70,7 +69,7 @@ RSpec.describe InternationalTransfersServiceApp do
           ]
         }
 
-        expect(last_response.body).to include_json(expected_body)
+        expect(last_response.body).to be_json_eql(expected_body.to_json)
       end
     end
 
@@ -112,29 +111,22 @@ RSpec.describe InternationalTransfersServiceApp do
         expect(last_response.content_type).to eq('application/json;charset=utf-8')
       end
 
-      it 'returns the details of the newly created transfer in the response body' do
+      it 'returns the details of the newly created transfer in the response body, including the exchange rate used' do
         expected_body = {
           fromCurrency: 'AUD',
           toCurrency: 'HUF',
           transferDate: '2017-10-23',
-          originalAmount: 100.50
+          originalAmount: 100.50,
+          exchangeRate: 1.23
         }
 
-        expect(last_response.body).to include_json(expected_body)
+        expect(last_response.body).to be_json_eql(expected_body.to_json)
       end
 
       it 'returns the ID of the newly created transfer in the response body' do
-        uuid_matcher = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
+        uuid_format = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
 
-        expect(last_response.body).to include_json(
-          id: uuid_matcher
-        )
-      end
-
-      it 'returns the exchange rate used for the transfer in the response body' do
-        expect(last_response.body).to include_json(
-          exchangeRate: 1.23
-        )
+        expect(JSON.parse(last_response.body)["id"]).to match(uuid_format)
       end
 
       it 'saves the transfer to the database' do
