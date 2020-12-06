@@ -1,6 +1,6 @@
 # batect-sample-ruby
 
-[![Build Status](https://travis-ci.org/batect/batect-sample-ruby.svg?branch=master)](https://travis-ci.org/batect/batect-sample-ruby)
+[![Build Status](https://travis-ci.com/batect/batect-sample-ruby.svg?branch=master)](https://travis-ci.com/batect/batect-sample-ruby)
 
 A sample service with two dependencies (a database and another service) with [batect](https://github.com/batect/batect)-based
 build and testing environments.

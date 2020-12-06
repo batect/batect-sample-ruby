@@ -126,7 +126,7 @@ RSpec.describe InternationalTransfersServiceApp do
       it 'returns the ID of the newly created transfer in the response body' do
         uuid_format = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
 
-        expect(JSON.parse(last_response.body)["id"]).to match(uuid_format)
+        expect(JSON.parse(last_response.body)['id']).to match(uuid_format)
       end
 
       it 'saves the transfer to the database' do
