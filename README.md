@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.com/batect/batect-sample-ruby.svg?branch=master)](https://travis-ci.com/batect/batect-sample-ruby)
 
-A sample service with two dependencies (a database and another service) with [batect](https://github.com/batect/batect)-based
+A sample service with two dependencies (a database and another service) with [Batect](https://github.com/batect/batect)-based
 build and testing environments.
 
 ## Building, testing, running etc.
@@ -30,7 +30,7 @@ There are three kinds of tests:
 
 ## Important notes
 
-As this is just a sample application used to demonstrate how to use batect, the code itself is definitely not production ready.
+As this is just a sample application used to demonstrate how to use Batect, the code itself is definitely not production ready.
 A number of shortcuts have been taken, including:
 
 * There is no error checking or validation
@@ -43,4 +43,4 @@ A number of shortcuts have been taken, including:
 
 ## Links
 
-* [batect](https://github.com/batect/batect)
+* [Batect](https://github.com/batect/batect)
