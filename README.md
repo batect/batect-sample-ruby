@@ -1,6 +1,6 @@
 # batect-sample-ruby
 
-[![Build Status](https://travis-ci.com/batect/batect-sample-ruby.svg?branch=main)](https://travis-ci.com/batect/batect-sample-ruby)
+[![Pipeline](https://github.com/batect/batect-sample-ruby/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/batect/batect-sample-ruby/actions/workflows/build.yml)
 
 A sample service with two dependencies (a database and another service) with [Batect](https://github.com/batect/batect)-based
 build and testing environments.
