@@ -1,0 +1,42 @@
+name: Pipeline
+
+on: [push]
+
+jobs:
+  build:
+    name: "Build and Test"
+    runs-on: ubuntu-latest
+    env:
+      TERM: xterm-256color
+      BATECT_CACHE_TYPE: directory
+      BATECT_ENABLE_TELEMETRY: true
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Cache Batect
+        uses: actions/cache@v2
+        with:
+          path: ~/.batect/cache
+          key: batect-${{ hashFiles('batect') }}
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: .batect/caches
+          key: batect-caches-${{ hashFiles('Gemfile.lock') }}
+
+      - name: Download dependencies
+        run: ./batect setup
+
+      - name: Lint
+        run: ./batect lint
+
+      - name: Run unit tests
+        run: ./batect unitTest
+
+      - name: Run integration tests
+        run: ./batect integrationTest
+
+      - name: Run journey tests
+        run: ./batect journeyTest
