@@ -1,6 +1,6 @@
 containers:
   build-env:
-    image: ruby:3.0.2
+    image: ruby:3.0.3
     volumes:
       - local: .
         container: /code
