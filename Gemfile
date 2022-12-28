@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 
 gem 'pg', '1.4.5'
-gem 'sinatra', '3.0.4'
+gem 'sinatra', '3.0.5'
 gem 'thin', '1.8.0'
 
 group :development do
