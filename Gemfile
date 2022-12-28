@@ -8,7 +8,7 @@ gem 'thin', '1.8.1'
 
 group :development do
   gem 'guard-rspec', '4.7.3'
-  gem 'guard-rubocop', '1.4.0'
+  gem 'guard-rubocop', '1.5.0'
   gem 'json_spec', '1.1.5'
   gem 'rack-test', '1.1.0'
   gem 'rake', '13.0.6'
