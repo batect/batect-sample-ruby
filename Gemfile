@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 gem 'pg', '1.4.5'
 gem 'sinatra', '3.0.5'
-gem 'thin', '1.8.0'
+gem 'thin', '1.8.1'
 
 group :development do
   gem 'guard-rspec', '4.7.3'
