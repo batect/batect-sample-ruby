@@ -47,7 +47,7 @@ GEM
     parallel (1.20.1)
     parser (2.7.2.0)
       ast (~> 2.4.1)
-    pg (1.2.3)
+    pg (1.4.5)
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -115,17 +115,17 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  guard-rspec
-  guard-rubocop
-  json_spec
-  pg
-  rack-test
-  rake
-  rspec
-  rubocop-performance
-  sinatra
-  thin
-  webmock
+  guard-rspec (= 4.7.3)
+  guard-rubocop (= 1.4.0)
+  json_spec (= 1.1.5)
+  pg (= 1.4.5)
+  rack-test (= 1.1.0)
+  rake (= 13.0.1)
+  rspec (= 3.10.0)
+  rubocop-performance (= 1.9.1)
+  sinatra (= 3.0.4)
+  thin (= 1.8.0)
+  webmock (= 3.10.0)
 
 BUNDLED WITH
    2.1.4
