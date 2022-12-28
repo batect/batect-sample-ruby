@@ -14,5 +14,5 @@ group :development do
   gem 'rake', '13.0.6'
   gem 'rspec', '3.12.0'
   gem 'rubocop-performance', '1.15.2'
-  gem 'webmock', '3.10.0'
+  gem 'webmock', '3.18.1'
 end
