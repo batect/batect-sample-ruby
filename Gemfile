@@ -2,17 +2,17 @@
 
 source 'https://rubygems.org'
 
-gem 'pg'
-gem 'sinatra'
-gem 'thin'
+gem 'pg', '1.2.3'
+gem 'sinatra', '3.0.4'
+gem 'thin', '1.8.0'
 
 group :development do
-  gem 'guard-rspec'
-  gem 'guard-rubocop'
-  gem 'json_spec'
-  gem 'rack-test'
-  gem 'rake'
-  gem 'rspec'
-  gem 'rubocop-performance'
-  gem 'webmock'
+  gem 'guard-rspec', '4.7.3'
+  gem 'guard-rubocop', '1.4.0'
+  gem 'json_spec', '1.1.5'
+  gem 'rack-test', '1.1.0'
+  gem 'rake', '13.0.1'
+  gem 'rspec', '3.10.0'
+  gem 'rubocop-performance', '1.9.1'
+  gem 'webmock', '3.10.0'
 end
