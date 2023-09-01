@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'pg', '1.5.3'
+gem 'pg', '1.5.4'
 gem 'sinatra', '3.1.0'
 gem 'thin', '1.8.2'
 
